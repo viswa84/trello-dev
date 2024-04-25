@@ -2,7 +2,23 @@ import React from "react";
 import { Medal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { Poppins } from "next/font/google";
+import { cn } from "@/lib/utils";
+const textFont =Poppins({
+  subsets:["latin"],
+  weight:[
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900",
 
+  ]
+})
 export default function MarketingPage() {
   return (
     <div className="flex items-center justify-center flex-col">
@@ -20,7 +36,7 @@ export default function MarketingPage() {
           Work forward.
         </div>
       </div>
-      <div className="text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto">
+      <div className={cn("text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",textFont.className)}>
         {" "}
         collaborate, manage projects,and reach new productivity peaks. From high
         rises to the office, the way ypur team works is unique - acommpish it
