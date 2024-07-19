@@ -1,12 +1,17 @@
+import { ModalProvider } from "@/components/providers/model-provider";
+import { QueryProvider } from "@/components/providers/query-providers";
 import { ClerkProvider } from "@clerk/nextjs";
-import {Toaster} from "sonner"
+import { Toaster } from "sonner";
 const PlatFormLayout = ({ children }: { children: React.ReactNode }) => {
-    return (
-        <ClerkProvider>
-            <Toaster/>
-            {children}
-        </ClerkProvider>
-    )
+  return (
+    <ClerkProvider>
+      <QueryProvider>
+        <Toaster />
+        <ModalProvider />
+        {children}
+      </QueryProvider>
+    </ClerkProvider>
+  );
 };
 
-export default PlatFormLayout
+export default PlatFormLayout;
